@@ -4,11 +4,12 @@
 pkgname=bloodyad
 pkgver=2.5.4.r1.gdd13a57
 pkgrel=1
+epoch=1
 pkgdesc='An Active Directory Privilege Escalation Framework.'
 arch=('any')
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-windows')
 url='https://github.com/CravateRouge/bloodyAD'
-license=('GPL3')
+license=('GPL-3.0-or-later')
 depends=('python')
 makedepends=('git' 'python-setuptools' 'python-pip')
 source=("git+https://github.com/CravateRouge/$pkgname.git")
@@ -45,6 +46,6 @@ source /usr/share/$pkgname/venv/bin/activate
 exec python /usr/share/$pkgname/bloodyAD.py "\$@"
 EOF
 
-  chmod a+x "$pkgdir/usr/bin/$pkgname"
+  chmod +x "$pkgdir/usr/bin/$pkgname"
 }
 
