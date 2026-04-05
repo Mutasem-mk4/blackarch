@@ -98,21 +98,33 @@ For detailed steps, see the installation documentation.
 
 # Usage
 
-## Once installed, you can add or remove tools.
+# Installing Tools
 
 ```bash
+# Install a specific tool
+sudo pacman -S lulzbuster
+
 # Install all BlackArch tools
 sudo pacman -S blackarch
 ```
 
-## Install Specific Tool Groups
+## Install a Specific Tool Group
 
 ```bash
 # Example: Web Application Security tools
 sudo pacman -S blackarch-webapp
 ```
 
-For a complete list of available tools, visit the official tools page.
+## List Tools
+For a complete list of available tools, visit the official [tools
+page](https://blackarch.org/tools.html) or run:
+```bash
+# List all available tools
+pacman -Sg blackarch
+
+# List all available tools with version information and description
+pacman -Ss blackarch
+```
 
 ### Running Tools
 
