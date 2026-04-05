@@ -2,7 +2,7 @@
 # See COPYING for license details.
 
 pkgname=badsecrets
-pkgver=1.0.170.r0.g3edc7cb
+pkgver=1.0.170.r7.g6a7aa49
 pkgrel=1
 pkgdesc='A library for detecting known secrets across many web frameworks.'
 arch=('any')

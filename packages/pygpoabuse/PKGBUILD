@@ -2,7 +2,7 @@
 # See COPYING for license details.
 
 pkgname=pygpoabuse
-pkgver=40.79d08b7
+pkgver=41.4b0aab2
 pkgrel=1
 pkgdesc='RCE via GPO scheduled tasks.'
 arch=('any')

@@ -3,7 +3,7 @@
 
 pkgname=python-frida-tools
 _pkgname=frida_tools
-pkgver=14.8.0
+pkgver=14.8.1
 pkgrel=1
 pkgdesc='Frida CLI tools.'
 groups=('blackarch' 'blackarch-mobile' 'blackarch-binary' 'blackarch-reversing')
@@ -14,7 +14,7 @@ depends=('python' 'python-frida' 'python-colorama' 'python-prompt_toolkit'
          'python-pygments' 'python-websockets' 'libimobiledevice')
 makedepends=('python-setuptools')
 source=("https://files.pythonhosted.org/packages/source/${_pkgname::1}/$_pkgname/$_pkgname-$pkgver.tar.gz")
-sha512sums=('8700dc515d40d36edcd5f16ca09df85b0e9aa5e507d02108e2b573e92c3ade247698b6eaaaed3915d176b6ff392413c4ab44a856a387f2a32053e6494a9dc0f9')
+sha512sums=('4e11ea85f2d069a50ba2bd28efbace092c8beebe3ac024f8fb0eea316e0a3bfb51566046701f99e893d4b614baa26a0d46077c0eb86fec29e1ebd870cb3ccbd5')
 
 build() {
   cd "$_pkgname-$pkgver"

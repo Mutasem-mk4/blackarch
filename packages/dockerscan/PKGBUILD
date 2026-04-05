@@ -2,7 +2,7 @@
 # See COPYING for license details.
 
 pkgname=dockerscan
-pkgver=v2.0.5.r80.g26783af
+pkgver=v2.0.5.r88.g01c53bf
 _pyver=3.14
 pkgrel=1
 epoch=1

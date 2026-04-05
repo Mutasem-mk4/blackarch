@@ -2,7 +2,7 @@
 # See COPYING for license details.
 
 pkgname=rita
-pkgver=v5.1.1.r0.ga3c5150
+pkgver=v5.1.0.r14.ga28105c
 pkgrel=1
 epoch=3
 pkgdesc='Real Intelligence Threat Analytics.'

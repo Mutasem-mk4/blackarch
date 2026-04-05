@@ -2,7 +2,7 @@
 # See COPYING for license details.
 
 pkgname=bbot
-pkgver=7558.ec1acae
+pkgver=7576.d57a125
 pkgrel=1
 epoch=2
 pkgdesc='Multipurpose scanner built to automate your Recon, Bug Bounties, and ASM.'
