@@ -98,7 +98,7 @@ For detailed steps, see the installation documentation.
 
 # Usage
 
-# Installing Tools
+## Installing Tools
 
 ```bash
 # Install a specific tool
