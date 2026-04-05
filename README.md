@@ -126,7 +126,7 @@ pacman -Sg blackarch
 pacman -Ss blackarch
 ```
 
-### Running Tools
+## Running Tools
 
 After installation, you can run tools directly from the terminal or application
 menu. Most tools are command-line based, ideal for automation and scripting.
