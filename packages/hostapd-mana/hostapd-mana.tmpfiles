@@ -1,2 +1,0 @@
-# create state dir
-d /var/lib/hostapd-mana 750 root root - -
