@@ -1,0 +1,48 @@
+# Maintainer: Mutasem-mk4 <140179052+Mutasem-mk4@users.noreply.github.com>
+pkgname=procscope
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='Process-scoped runtime investigation tool using eBPF'
+arch=('x86_64' 'aarch64')
+url='https://github.com/Mutasem-mk4/procscope'
+license=('MIT')
+depends=()
+makedepends=('go>=2:1.22')
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
+sha256sums=('d46b1a28c82c99c8d60729de67a7d2d7081f69d18e43c84890ebe7e73cb5be8d')
+
+build() {
+  cd "${pkgname}-${pkgver}"
+
+  export CGO_ENABLED=0
+  export GOFLAGS="-trimpath -mod=readonly -modcacherw"
+
+  go build -v \
+    -ldflags "-s -w \
+      -X 'github.com/Mutasem-mk4/procscope/internal/version.Version=${pkgver}' \
+      -X 'github.com/Mutasem-mk4/procscope/internal/version.Commit=${pkgrel}'" \
+    -o "${pkgname}" \
+    ./cmd/procscope
+}
+
+check() {
+  cd "${pkgname}-${pkgver}"
+  go test -short ./internal/events/... ./internal/output/... ./internal/redact/... ./internal/version/...
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+
+  install -Dm755 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm644 "man/${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+  install -Dm644 "completions/${pkgname}.bash" \
+    "${pkgdir}/usr/share/bash-completion/completions/${pkgname}"
+  install -Dm644 "completions/${pkgname}.zsh" \
+    "${pkgdir}/usr/share/zsh/site-functions/_${pkgname}"
+  install -Dm644 "completions/${pkgname}.fish" \
+    "${pkgdir}/usr/share/fish/vendor_completions.d/${pkgname}.fish"
+
+  install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+}
